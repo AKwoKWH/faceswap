@@ -73,7 +73,7 @@ class Backend():
             break
         fs_backend = self.backends[selection].lower()
         config = {"backend": fs_backend}
-        with open(self.config_file, "w") as cnf:
+        with open(self.config_file, "w+") as cnf:
             json.dump(config, cnf)
         print("Faceswap config written to: {}".format(self.config_file))
         return fs_backend
